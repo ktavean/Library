@@ -7,9 +7,43 @@
         <title>Library</title>
     </head>
     <body>
-        <form id="bookForm">
-            <label for="bookName">Book name</label>
-            <input type="text" name="bookName" id="bookName">
-        </form>
+        <div id="container">
+            <header>
+                <h1>Library - dependable as never before.</h1>
+            </header>
+            <div id="content">
+                <div id="top-side">
+                    <button type="button" id="addBtn">+</button>
+                </div>
+                <form id="bookForm">
+                    <h2>Add a book!</h2>
+                    <label for="bookName">Book's name:</label>
+                    <input type="text" name="bookName" id="bookName">
+                    <label for="authorName">Author's name:</label>
+                    <input type="text" name="authorName" id="authorName">
+                    <label for="pages">Number of pages:</label>
+                    <input type="text" name="pages" id="pages">
+                    <label for="read">Have you read it?</label>
+                    <div id="radioRead">
+                        <input type="radio" name="read" id="read" value="yes"><label name="yes" for="read">Yes</label>
+                        <input type="radio" name="read" id="read" value="no"><label name="no" for="read">No</label>
+                    </div>
+                    <button type="button" id="submitBtn">Add book</button>
+                    <button type="button" id="cancelBtn">Cancel</button>
+                </form>
+                <div id="booksContent">
+                    <div id="bookCard">
+                        <p id="bookTitle">Title of book</p>
+                        <p id="bookAuthor">Author of book</p>
+                        <p id="bookPages">Number of pages</p>
+                        <p id="bookRead">Read (y/n)</p>
+                        <button type="button" id="delBtn">Delete book</button>
+                    </div>
+                </div>
+            </div>
+            <footer>
+
+            </footer>
+        </div>
     </body>
 </html>

@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    --box-shadow-style: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+#container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+
+}
+
+#top-side {
+    display: flex;
+    justify-content: center;
+}
+
+#content form {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    display: grid;
+    grid-template-columns: repeat(2, 0.9fr);
+    grid-template-rows: repeat(5, 1fr) 2fr;
+    row-gap: 1rem;
+    box-shadow: var(--box-shadow-style);
+    padding: 1.5rem;
+}
+
+form h2 {
+    grid-column: span 2;
+    justify-self: center;
+}
+
+#radioRead {
+    grid-column: 2;
+    grid-row: 5;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#radioRead label {
+    margin-right: auto;
+}
+
+#submitBtn, #cancelBtn {
+    grid-row: 6;
+    justify-self: center;
+    align-self: stretch;
+}
+
+form button {
+    width: 5rem;
+}
