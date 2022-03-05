@@ -42,7 +42,7 @@ function toggleStuff() {
 }
 
 function checkOption() {
-    let isItRead = false;
+    let isItRead = null;
     for (let option of read) {
         if (option.checked) {
             if (option.value === "y") {
@@ -79,10 +79,20 @@ function makeBook(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-    let isItRead = checkOption();
-    let newBook = new makeBook(bookName.value, authorName.value, bookPages.value, isItRead);
-    library.push(newBook);
-    displayBook()
+    if (bookName.value === "") {
+        alert("Please enter a name for the book!");
+    } else if (authorName.value === "") {
+        alert("Please enter the author's name!");
+    } else if (bookPages.value === "") {
+        alert("Please enter the number of pages!");
+    } else if (checkOption() === null) {
+        alert("Please choose whether you read the book or not!");
+    } else {
+        let isItRead = checkOption();
+        let newBook = new makeBook(bookName.value, authorName.value, bookPages.value, isItRead);
+        library.push(newBook);
+        displayBook()
+    }
 }
 
 function displayBook() {

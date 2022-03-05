@@ -49,7 +49,7 @@ header {
 }
 
 #top-side button:hover {
-    background: rgb(77, 191, 230);
+    background: orange;
 }
 
 #booksContent {
