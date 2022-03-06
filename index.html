@@ -18,11 +18,11 @@
                 <form id="bookForm" class="hidden">
                     <h2>Add a book!</h2>
                     <label for="bookName">Book's name:</label>
-                    <input type="text" name="bookName" id="bookName">
+                    <input type="text" name="bookName" id="bookName" required>
                     <label for="authorName">Author's name:</label>
-                    <input type="text" name="authorName" id="authorName">
+                    <input type="text" name="authorName" id="authorName" required>
                     <label for="pages">Number of pages:</label>
-                    <input type="text" name="pages" id="pages">
+                    <input type="number" name="pages" id="pages" title="Must be a number" required>
                     <label for="read">Have you read it?</label>
                     <div id="radioRead">
                         <input type="radio" name="read" id="yes" value="y"><label name="yes" for="read">Yes</label>
@@ -32,10 +32,12 @@
                     <button type="button" id="cancelBtn">Cancel</button>
                 </form>
                 <div id="booksContent">
+                    <div class="bot-card">
+                    </div>
                 </div>
             </div>
             <footer>
-
+                Made by ktavean 2022.
             </footer>
         </div>
     </body>

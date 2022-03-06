@@ -42,11 +42,13 @@ function toggleStuff() {
 }
 
 function checkOption() {
-    let isItRead = null;
+    let isItRead;
     for (let option of read) {
         if (option.checked) {
             if (option.value === "y") {
                 isItRead = true;
+            } else {
+                isItRead = false;
             }
         }
     }
@@ -85,7 +87,7 @@ function addBookToLibrary() {
         alert("Please enter the author's name!");
     } else if (bookPages.value === "") {
         alert("Please enter the number of pages!");
-    } else if (checkOption() === null) {
+    } else if (checkOption() === undefined) {
         alert("Please choose whether you read the book or not!");
     } else {
         let isItRead = checkOption();
@@ -99,18 +101,26 @@ function displayBook() {
     for (let i = library.length-1; i < library.length; i++) {
         let newBookCard = document.createElement("div");
         newBookCard.classList.add("bookCard");
+        let topSide = document.createElement("div");
+        topSide.classList.add("top-card")
         let title = document.createElement("p");
-        title.innerText = library[i].title;
+        title.innerText = `"${library[i].title}"`;
+        topSide.appendChild(title);
         let author = document.createElement("p");
-        author.innerText = library[i].author;
+        author.innerText = `By ${library[i].author}`;
+        topSide.appendChild(author);
         let pages = document.createElement("p");
-        pages.innerText = library[i].pages;
+        pages.innerText = `${library[i].pages} pages`;
+        topSide.appendChild(pages);
+        let botSide = document.createElement("div");
+        botSide.classList.add("bot-card");
         let isRead = document.createElement("button");
         isRead.innerText = library[i].read ? "Read" : "Not read";
         isRead.setAttribute("id", "readbtn");
         isRead.classList.toggle(library[i].read ? "read" : "not-read");
         let deleteBtn = document.createElement("button");
         deleteBtn.setAttribute("id", "delbtn");
+        deleteBtn.setAttribute("class", "bot-card");
         deleteBtn.innerText = "Remove book";
         deleteBtn.addEventListener("click", () => {
             newBookCard.remove();
@@ -125,14 +135,13 @@ function displayBook() {
                 library[i].read = true;
                 isRead.classList.remove("not-read");
                 isRead.classList.add("read");
-                isRead.innerText = "read";
+                isRead.innerText = "Read";
             }
         })
-        newBookCard.appendChild(title);
-        newBookCard.appendChild(author);
-        newBookCard.appendChild(pages);
-        newBookCard.appendChild(isRead);
-        newBookCard.appendChild(deleteBtn);
+        botSide.appendChild(isRead);
+        botSide.appendChild(deleteBtn);
+        newBookCard.appendChild(topSide);
+        newBookCard.appendChild(botSide);
         booksContent.appendChild(newBookCard);
         toggleStuff();
         resetStuff();
