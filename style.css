@@ -69,12 +69,11 @@ header h1 {
 .bookCard {
     display: flex;
     flex-direction: column;
-    /* align-content: space-between; */
     gap: 2.5rem;
     text-align: center;
     padding: 1.5rem;
     width: 10rem;
-    height: 13rem;
+    height: 15rem;
     box-shadow: var(--box-shadow-style);
     background: rgba(0, 0, 0, 0.5);
     color: white;
@@ -85,7 +84,7 @@ header h1 {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    height: 7rem;
+    height: 9rem;
 }
 
 .bot-card {
@@ -100,22 +99,27 @@ header h1 {
     width: 6rem;
     height: 2.5rem;
     font-weight: bold;
+    box-sizing: border-box;
 }
 
 .bot-card button[id="delbtn"] {
     background: #EB3E0A;
+    
 }
 
 .bot-card button[id="delbtn"]:active {
     color: white;
+    border: 1px solid black;
 }
 
 .read:active {
     color: white;
+    border: 1px solid black;
 }
 
 .not-read:active {
     color: white;
+    border: 1px solid black;
 }
 
 .bookcard-transparent {
