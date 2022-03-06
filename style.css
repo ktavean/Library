@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     --box-shadow-style: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
-    font-family: helvetica;
+    --border-style: 1px solid white;
 }
 
 body {
-    background: #AFCBFF;
+    background: #54101D;
 }
 
 button {
@@ -22,7 +22,7 @@ button {
 }
 
 .container-transparent {
-    background: rgba(4, 13, 15, 0.3);
+    background: rgba(4, 13, 15, 0.5);
 }
 
 header {
@@ -32,7 +32,7 @@ header {
 }
 
 header h1 {
-    color: black;
+    color: white;
 }
 
 #content {
@@ -52,7 +52,7 @@ header h1 {
     font-size: 2.5rem;
     border-radius: 50px;
     background: transparent;
-    color: black;
+    color: white;
 }
 
 #top-side button:hover {
@@ -104,23 +104,23 @@ header h1 {
 }
 
 .bot-card button[id="delbtn"] {
-    background: #EB3E0A;
+    background: #d30202;
     
 }
 
 .bot-card button[id="delbtn"]:active {
     color: white;
-    border: 1px solid black;
+    border: var(--border-style);
 }
 
 .read:active {
     color: white;
-    border: 1px solid black;
+    border: var(--border-style);
 }
 
 .not-read:active {
     color: white;
-    border: 1px solid black;
+    border: var(--border-style);
 }
 
 .bookcard-transparent {
@@ -128,11 +128,11 @@ header h1 {
 }
 
 .read {
-    background: #99E000;
+    background: #B18653;
 }
 
 .not-read {
-    background: #FFB400;
+    background: #b18753a4;
 }
 
 #content form {
@@ -146,8 +146,8 @@ header h1 {
     row-gap: 1rem;
     box-shadow: var(--box-shadow-style);
     padding: 1.5rem;
-    background: white;
-    color: black;
+    background: #54101D;
+    color: white;
 }
 
 .hidden {
@@ -188,7 +188,8 @@ form input {
 }
 
 #submitBtn:hover, #cancelBtn:hover {
-    background: rgba(122, 122, 122, 0.7)
+    background: rgba(122, 122, 122, 0.8);
+    color: white;
 }
 
 form button {
@@ -198,4 +199,5 @@ form button {
 footer {
     margin-top: 15rem;
     align-self: center;
+    color: white;
 }
