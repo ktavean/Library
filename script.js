@@ -73,11 +73,13 @@ cancelBtn.addEventListener("click", (e) => {
 submitBtn.addEventListener("click", addBookToLibrary);
 
 
-function makeBook(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 function addBookToLibrary() {
@@ -91,7 +93,7 @@ function addBookToLibrary() {
         alert("Please choose whether you read the book or not!");
     } else {
         let isItRead = checkOption();
-        let newBook = new makeBook(bookName.value, authorName.value, bookPages.value, isItRead);
+        let newBook = new Book(bookName.value, authorName.value, bookPages.value, isItRead);
         library.push(newBook);
         displayBook()
     }
